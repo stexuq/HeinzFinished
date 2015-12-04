@@ -37,7 +37,7 @@ module.exports.factory = function (router, repo) {
             if (!err) {
                 addCookie(user, res);
                 console.log(user);
-                res.redirect('/'); //sho
+                res.redirect('/history'); // show order history
             } else {
                 res.status(400);
             }
