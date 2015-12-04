@@ -1,0 +1,21 @@
+﻿<script id="t-payment" type="text/html">
+    <div style="text-align: center" data-bind="with: data">
+        <h4 for="user-card-number">Card Number</h4>
+        <input id="user-card-number" data-bind="value: card" />
+        
+        <h4 for="user-cvc">CVC</h4>
+        <input id="user-cvc" data-bind="value: cvc" />
+    
+        <h4 for="user-exp-month">Month(MM)</h4>
+        <input id="user-exp-month" data-bind="value: month" />
+    
+        <h4 for="user-exp-year">Year(YYYY)</h4>
+        <input id="user-exp-year" data-bind="value: year" />
+    
+    </div>
+    
+    <div style="text-align: center" data-bind="with: data">
+        <button name="makePayment" class="btn btn-success" data-bind="click: makePayment">Pay now</button>
+    </div>
+
+</script>

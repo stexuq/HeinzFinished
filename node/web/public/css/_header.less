@@ -1,0 +1,54 @@
+// main: main.less
+
+header {
+    text-align: justify;
+    letter-spacing: 1px;
+    height: 120px;
+    padding: 2em 10%;
+    background: @header-bg;
+    color: @header-text-color;
+
+    h1,
+    .search-form,
+    nav {
+        display: inline-block;
+        vertical-align: middle;
+
+        a {
+            color: @header-link-color;
+            margin-right: 15px;
+        }
+
+        .fa {
+            font-size: 1.3em;
+
+            // add space between the icon and the text
+            &:before {
+                margin: 3px;
+            }
+        }
+    }
+
+    h1 {
+        padding-bottom: .5em;
+    }
+
+    .search-form {
+        width: 80%;
+
+        .input-group {
+            .form-control,
+            .btn {
+                border: none;
+                border-left: 1px solid #ccc;
+                border-radius: 0;
+            }
+        }
+    }
+
+    &:after {
+        content: '';
+        display: inline-block;
+        width: 100%;
+    }
+}

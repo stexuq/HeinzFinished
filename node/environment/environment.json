@@ -1,0 +1,10 @@
+{
+    "readme": "This JSON file contains default environment configurations.",
+    "env": "development",
+    "version": "1.0.0",
+    "port": 3000,
+    "storeThisConfigInMemory": true,    
+    "db": {
+        "connx-string": "mongodb://localhost:27017/heinz95729"
+    }
+}

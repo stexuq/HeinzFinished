@@ -1,0 +1,32 @@
+<script id="t-history" type="text/html">
+        <div class="product-component">
+        <h3> Order History </h3>
+        <div class="row" data-bind="foreach: { data: data.books(), as: 'product' }">
+            <div class="col-sm-1 col-md-12 product-col"> 
+                <div class="thumbnail">
+                    <a class="thumbnail-img" href="javascript:void(0);" data-bind="click: product.click">
+                        <img src="" alt="" data-bind="src: product.thumbnailLink, attr: { alt: product.thumbnailAlt }">
+                    </a>
+
+                    <div class="caption">
+                        <h3><a href="javascript:void(0);" data-bind="text: product.title, click: product.click"></a></h3>
+                        <div class="description" data-bind="html: product.description"></div>
+                        <!--<div class="overlay"></div>
+                        <a class="buy-now" href="javascript:void(0);" data-bind="currency: product.price"></a>
+                        <span class="label label-default"  data-bind="text: product.qty"></span>-->
+                        <div class="btn-group pull-left" role="group" aria-label="">
+                            <button class="btn btn-success btn-buy" data-bind="click: product.download"> Download this book now</button>
+                        </div>
+                        <div class="pull-right">
+                            <h1 class="label label-default" data-bind="text: product.qty"></h1>
+                        </div>
+                        <div class="pull-right"> 
+                            <span class="buy-now" data-bind="currency: product.price"></span>
+                        </div>
+                    </div>                        
+                </div>
+            </div>
+        </div>
+
+    </div>
+</script>

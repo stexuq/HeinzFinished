@@ -1,0 +1,51 @@
+<script id="t-shopping-cart" type="text/html">
+        <div class="product-component">
+            <!--<h4 class="test">
+                <span> Total Items:  </span>
+                <span data-bind="text: items"></span>
+            </h4>-->
+            <h3 class="test" data-bind="with: data">
+                <span> Total Amount: $ </span>
+                <span data-bind="text: amount"></span>
+                <span style="float:right" data-bind="text: items"></span>
+                <span style="float:right">Total Items: </span>
+
+            </h3>
+            <div data-bind="with: data">
+                <input type="button" class="button button-default" onclick="location.href='/payment';" value="Check Out" />
+            </div>
+            <!--<div>
+                <button class="btn btn-success btn-buy" data-bind="click: product.buyincart"> Check Out</button>
+            </div>-->
+            
+        <div class="row" data-bind="foreach: { data: data.books(), as: 'product' }">
+            <div class="col-sm-1 col-md-12 product-col"> 
+                <div class="thumbnail">
+                    <a class="thumbnail-img" href="javascript:void(0);" data-bind="click: product.click">
+                        <img src="" alt="" data-bind="src: product.thumbnailLink, attr: { alt: product.thumbnailAlt }">
+                    </a>
+
+                    <div class="caption">
+                        <h3><a href="javascript:void(0);" data-bind="text: product.title, click: product.click"></a></h3>
+                        <div class="description" data-bind="html: product.description"></div>
+                        <!--<div class="overlay"></div>
+                        <a class="buy-now" href="javascript:void(0);" data-bind="currency: product.price"></a>
+                        <span class="label label-default"  data-bind="text: product.qty"></span>-->
+                        <div class="btn-group pull-left" role="group" aria-label="">
+                            <button class="btn btn-success btn-buy" data-bind="click: product.buyincart"> Add one</button>
+                            <button class="btn btn-success btn-buy" data-bind="click: product.removeqty">remove one </button>
+                            <button class="btn btn-success btn-buy" data-bind="click: product.removelist"> remove this book</button>
+                        </div>
+                        <div class="pull-right">
+                            <h1 class="label label-default" data-bind="text: product.qty"></h1>
+                        </div>
+                        <div class="pull-right"> 
+                            <span class="buy-now" data-bind="currency: product.price"></span>
+                        </div>
+                    </div>                        
+                </div>
+            </div>
+        </div>
+
+    </div>
+</script>

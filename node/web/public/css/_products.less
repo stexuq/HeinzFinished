@@ -1,0 +1,76 @@
+// main: main.less
+
+.product-component {
+    
+    .row {
+        margin-top: 20px;
+        
+        .product-col {
+            
+            .thumbnail {
+                height: 250px;
+                padding: 0;
+                border: none;
+                .border-radius(0);
+                .box-shadow(2px 2px 5px 0px rgba(51,51,51,.2));
+                
+                a.thumbnail-img {
+                    img {
+                        max-height: 250px;
+                        max-width: 250px;                        
+                        float: left;
+                        margin: 0 10px 0 0;
+                    }
+                    
+//                    &::before {
+//                        opacity: 0;
+//                        content: ' ';
+//                        position: absolute;
+//                        width: 100%;
+//                        height: 250px;
+//                        background-color: rgba(51,51,51,.4);
+//                        transition: opacity 0.3s;
+//                        top: 0;
+//                    }                    
+//
+//                    &:hover::before {
+//                        opacity: 1;
+//                    }
+                }
+                
+                h3 {
+                    margin-top: 0;
+                    height: 55px;
+                    overflow: hidden;
+                }
+                
+                .description {
+                    height: 120px;
+                    position: relative;
+                    overflow: hidden;              
+                }
+                
+                .overlay {
+                    position: absolute;
+                    right: 0;
+                    width: 100px;
+                    margin-right: 16px;
+                    margin-top: -18px;
+                    height: 1.5em;
+                    .horizontal-gradient(transparent, white);                        
+                }                 
+                
+                .buy-now {
+                    margin-top: 5px;
+                    float: right;
+                    font-weight: 500;
+                    color: #449d44;
+                    font-size: 20px;
+                    &:hover {
+                        color: @link-hover-color;
+                    }
+                }
+            } // /.thumbnail
+        } // /.product-col
+    } // /.row
+} // /.product-component

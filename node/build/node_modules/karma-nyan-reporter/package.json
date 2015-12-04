@@ -1,0 +1,69 @@
+{
+  "author": {
+    "name": "Daniel Arlitt",
+    "email": "dgarlitt@yahoo.com"
+  },
+  "bugs": {
+    "url": "https://github.com/dgarlitt/karma-nyan-reporter/issues"
+  },
+  "dependencies": {
+    "cli-color": "^0.3.2"
+  },
+  "description": "Karma reporter with Nyan Cat style logging.",
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "coveralls": "^2.11.2",
+    "istanbul": "^0.3.15",
+    "mocha": "^2.2.4",
+    "mocha-lcov-reporter": "0.0.2",
+    "rewire": "^2.3.3",
+    "sinon": "^1.14.1",
+    "sinon-chai": "^2.7.0"
+  },
+  "keywords": [
+    "karma-plugin",
+    "karma-reporter",
+    "nyan",
+    "cat"
+  ],
+  "license": "The MIT License (MIT)",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "dgarlitt",
+      "email": "dgarlitt@yahoo.com"
+    }
+  ],
+  "name": "karma-nyan-reporter",
+  "peerDependencies": {
+    "karma": ">=0.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dgarlitt/karma-nyan-reporter.git"
+  },
+  "scripts": {
+    "coverage": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha",
+    "test": "./node_modules/mocha/bin/mocha -R spec ./test/*",
+    "test-travis": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec  ./test/*"
+  },
+  "version": "0.2.2",
+  "gitHead": "3a081a7d9aaf0f93050ef7253294db6507c6a828",
+  "homepage": "https://github.com/dgarlitt/karma-nyan-reporter#readme",
+  "_id": "karma-nyan-reporter@0.2.2",
+  "_shasum": "c443d011ae512f31ca1045e482af9909ac589852",
+  "_from": "karma-nyan-reporter@>=0.2.2 <0.3.0",
+  "_npmVersion": "2.9.1",
+  "_nodeVersion": "0.12.3",
+  "_npmUser": {
+    "name": "dgarlitt",
+    "email": "dgarlitt@yahoo.com"
+  },
+  "dist": {
+    "shasum": "c443d011ae512f31ca1045e482af9909ac589852",
+    "tarball": "http://registry.npmjs.org/karma-nyan-reporter/-/karma-nyan-reporter-0.2.2.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/karma-nyan-reporter/-/karma-nyan-reporter-0.2.2.tgz",
+  "readme": "ERROR: No README data found!"
+}

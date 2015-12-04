@@ -1,0 +1,28 @@
+// main: main.less
+
+.error-component {
+    margin: auto;
+    
+    .error-404 {
+        &:after {
+            content: '404';
+            font-weight: 900;
+            font-size: 400px;
+            line-height: 1em;
+            color: #eee;
+            margin-left: calc(50%/2);
+        }
+    }
+    
+    .error-detail {
+        position: absolute;
+        top: 3em;
+        font-size: 2em;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .error-stack {
+        // todo
+    }
+}

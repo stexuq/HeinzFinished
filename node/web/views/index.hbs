@@ -1,0 +1,11 @@
+<section id="main">
+    <!-- ko if: viewModel() -->
+    <div data-bind="template: { name: viewModel().template, data: viewModel, afterRender: afterRender }">
+    </div>
+    <!-- /ko -->
+    <!-- ko ifnot: viewModel() -->
+    <div>
+        <!-- no view model -->
+    </div>
+    <!-- /ko -->
+</section>

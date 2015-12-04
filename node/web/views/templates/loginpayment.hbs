@@ -1,0 +1,15 @@
+<script id="t-login-payment" type="text/html">
+    <form id="user-login" role="form">
+        <div class="form-group", data-bind="with: data">
+            <label for="user-login-email">Email address</label>
+            <input type="email" name="email" class="form-control" id="user-login-email" data-bind="value: email" />
+        </div>
+        <!-- <div class="form-group">
+            <label for="user-login-password">Password</label>
+            <input type="password" name="Password" class="form-control" id="user-login-password" />
+        </div> -->
+        <div class="form-group" data-bind="with: data">
+            <button name="LoginPayment" class="btn btn-success" data-bind="click: login">Login</button>
+        </div>
+    </form>
+</script>

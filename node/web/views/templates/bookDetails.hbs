@@ -1,0 +1,53 @@
+<script id="t-book-details" type="text/html">
+    <div class="book-component details" data-bind="with: data">
+        <figure class='book'>
+        <!-- Front -->
+            <ul class='hardcover_front'>
+                <li>
+                    <!-- ko if: book.thumbnailLink != null -->
+                    <img src="" alt="" data-bind="attr: { src: book.thumbnailLink, alt: book.thumbnailAlt }">
+                    <!-- /ko -->
+                    <!-- ko if: book.thumbnailLink == null -->
+                    <div class="coverDesign yellow">
+<!--
+                        <span class="ribbon">NEW</span>
+                        <h1>CSS</h1>
+                        <p>TRANSFORM</p>
+-->
+                    </div>
+                    <!-- /ko -->
+                </li>
+                <li></li>
+            </ul>
+        <!-- Pages -->
+            <ul class='page'>
+                <li></li>
+                <li>
+                    <a class="btn" data-bind="href: book.detailsLink">READ MORE</a>
+                </li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        <!-- Back -->
+            <ul class='hardcover_back'>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul class='book_spine'>
+                <li></li>
+                <li></li>
+            </ul>
+            <figcaption>
+                <h1  data-bind="text: book.title"></h1>
+                <div data-bind="foreach: book.authors">
+                    <span data-bind="text: book.name"></span>
+                </div>
+                <div data-bind="html: book.description"></div>
+            </figcaption>
+        </figure>
+        <div class="purchase">
+            <button class="btn btn-success btn-buy" data-bind="currency: book.price, click: book.buy"></button>
+        </div>        
+    </div>
+</script>

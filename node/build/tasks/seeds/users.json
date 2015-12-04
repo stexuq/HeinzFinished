@@ -1,0 +1,30 @@
+[
+    {
+        "_id": "564d420206fd376a5b560026",
+    	"email": "shopper1@95729.com",
+    	"name": "Shopper 1",
+        "cart": {"book": [], "amount": 0, "items": 0},
+        "history": []
+    },
+    {
+        "_id": "564d420206fd376a5b560027",
+    	"email": "shopper2@95729.com",
+    	"name": "Shopper 2",
+        "cart": {"book": [], "amount": 0, "items": 0},
+        "history":[]
+    },
+    {
+        "_id": "564d420206fd376a5b560028",
+    	"email": "shopper3@95729.com",
+    	"name": "Shopper 3",
+        "cart": {"book": [], "amount": 0, "items": 0},
+        "history":[]
+    },
+    {
+        "_id": "564d420206fd376a5b560029",
+    	"email": "shopper4@95729.com",
+    	"name": "Shopper 4",
+        "cart": {"book": [], "amount": 0, "items": 0},
+        "history":[]
+    }
+]

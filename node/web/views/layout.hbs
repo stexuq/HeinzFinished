@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/main.css" />
+    <script src="/scripts/lib/modernizr.custom.js"></script>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="/">Papyr</a></h1>
+        <div class="search-form">
+            <div class="input-group input-group-lg">
+                <input type="text" class="form-control" placeholder="search" data-bind="textInput: searchString">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" data-bind="click: go">Go!</button>
+                </span>
+            </div><!-- /input-group -->
+        </div>
+            <!--<span> log out </span> -->
+        <nav>
+             <a href="/checkout">
+                <h3>
+                    <h4 class="cart-number" ></h4>
+                </h3>
+                <i class="fa fa-shopping-cart"></i>
+            </a>
+            <a href="/login">
+                <i class="fa fa-user"></i>
+            </a>
+            <!--<a href="/history">
+                <i class="fa fa-history"></i>
+            </a>-->
+            <!--<div class="product-component" data-bind="with: data">
+                <!--<span> 1</span>-->
+                <!--<span data-bind="text: items"></span>
+            </div>-->
+        </nav>
+        
+    </header>
+    <div class="container">
+        {{{body}}}
+    </div><!-- /container -->
+
+    <!-- templates -->
+
+    {{> empty}}
+    {{> error404}}
+    {{> searchNoResults}}
+    {{> productGrid}}
+    {{> bookDetails}}
+    {{> login}}
+    {{> register}}
+    {{> payment}}
+    {{> shoppingCart}}
+    {{> loginpayment}}
+    {{> history}}
+
+    <!-- /templates -->
+
+    <!-- Lib CDN's-->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+    <script src="/scripts/lib/bower_components/hilary/release/hilary.min.js"></script>
+    <script src="/scripts/lib/bower_components/gidget/release/gidget.min.js"></script>
+    <script src="/scripts/lib/bower_components/es6-promise/promise.min.js"></script>
+    <script src="/scripts/lib/bower_components/fetch/fetch.js"></script>
+    <script src="/scripts/lib/ko.binders.js"></script>
+    <script src="/scripts/lib/grid.js"></script>
+
+    <script src="/scripts/controllers/authController.js"></script>
+    <script src="/scripts/controllers/booksController.js"></script>
+    <script src="/scripts/controllers/homeController.js"></script>
+    <script src="/scripts/controllers/exampleController.js"></script>
+    <script src="/scripts/controllers/paymentController.js"></script>
+    <script src="/scripts/controllers/checkoutController.js"></script>
+    <script src="/scripts/controllers/historyController.js"></script>
+
+    <script src="/scripts/locale/en_US.js"></script>
+
+    <script src="/scripts/models/Book.js"></script>
+    <script src="/scripts/models/Books.js"></script>
+    <script src="/scripts/models/Product.js"></script>
+    <script src="/scripts/models/Products.js"></script>
+     <script src="/scripts/models/Entries.js"></script>
+
+    <script src="/scripts/viewModels/HomeVM.js"></script>
+    <script src="/scripts/viewModels/PaymentVM.js"></script>
+    <script src="/scripts/viewModels/LoginVM.js"></script>
+
+    <script src="/scripts/ExceptionHandler.js"></script>
+    <script src="/scripts/utils.js"></script>
+    <script src="/scripts/ViewEngine.js"></script>
+    <script src="/scripts/startup.js"></script>
+
+</body>
+</html>
