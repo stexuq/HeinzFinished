@@ -1,0 +1,11 @@
+{
+  "name": "gidget",
+  "dependencies": {
+    "async": "~1.4.2",
+    "chai": "*",
+    "hilary": "~4.3.1",
+    "jquery": "*",
+    "mocha": "*"
+  },
+  "devDependencies": {}
+}

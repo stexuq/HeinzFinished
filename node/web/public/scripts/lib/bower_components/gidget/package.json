@@ -1,0 +1,24 @@
+{
+  "name": "gidget-solution",
+  "version": "3.0.4",
+  "scripts": {
+      "install-dependencies": "cd build; npm install; cd ../tests; npm install; cd browser; bower install; cd ../../examples/node-example; npm run install-dependencies"
+  },
+  "dependencies": {
+      "hilary": "4.x"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/Acatar/gidget.git"
+  },
+  "keywords": [
+      "SPA",
+      "single page application"
+  ],
+  "author": "&y <andes.collab@gmail.com> (https://github.com/losandes)",
+  "license": "MIT",
+  "bugs": {
+      "url": "https://github.com/Acatar/gidget/issues"
+  },
+  "homepage": "https://github.com/Acatar/gidget"
+}

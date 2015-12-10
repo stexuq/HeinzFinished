@@ -1,0 +1,38 @@
+{
+  "name": "gidget",
+  "main": "release/gidget.min.js",
+  "version": "3.0.4",
+  "homepage": "https://github.com/Acatar/gidget",
+  "authors": [
+    "&y <andes.collab@gmail.com> (https://github.com/losandes)"
+  ],
+  "description": "A Domain Service Language (DSL) for JavaScript SPAs and Node.js servers inspired by NancyFx and Sinatra",
+  "dependencies": {
+    "hilary": "4.x"
+  },
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "SPA",
+    "DSL",
+    "sammy"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "build",
+    "examples",
+    "src",
+    "test"
+  ],
+  "_release": "3.0.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "3.0.4",
+    "commit": "90cf9865deeea8fba5ca40fef6d8031ca40e1f26"
+  },
+  "_source": "git://github.com/Acatar/gidget.git",
+  "_target": "~3.0.1",
+  "_originalSource": "gidget"
+}
