@@ -9,10 +9,10 @@ Hilary.scope('heinz').register({
         PaymentVM = function() {
             var self = {};
 
-            self.card = ko.observable('4242424242424242');
-            self.cvc = ko.observable('123');
-            self.month = ko.observable('10');
-            self.year = ko.observable('2016');
+            self.card = ko.observable('');
+            self.cvc = ko.observable('');
+            self.month = ko.observable('');
+            self.year = ko.observable('');
             
             self.makePayment = function() {
                 // alert('test haha');
