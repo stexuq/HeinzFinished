@@ -9,7 +9,7 @@ Hilary.scope('heinz').register({
         LoginVM = function() {
             var self = {};
 
-            self.email = ko.observable('shopper1@95729.com');
+            self.email = ko.observable('');
             
             self.login = function() {
                 //alert('test haha');
