@@ -81,6 +81,8 @@ module.exports.factory = function (router, repo, User) {
                 repo.mergeCart(req.body.email, req.session.cart, function (err) {
                 if (!err) {
                     addCookie(user, res);
+                    res.locals.user = new User(user);
+                    req.cookies.auth = new User(user);
                     //console.log(user);
                     res.send(user);
                 } else {
