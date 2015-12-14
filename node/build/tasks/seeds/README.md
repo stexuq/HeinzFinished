@@ -6,4 +6,4 @@
         <ul> amount: keeping track of total amount in the shopping cart </ul>
         <ul> items: keeping track of all items in the shopping cart </ul>
 	<li> add "history cart" field to "user" collection </li>
-		<span> a book array that simply keeps track all the books that a user has purchased successfully </span>
+		<ul> a book array that simply keeps track all the books that a user has purchased successfully </ul>
