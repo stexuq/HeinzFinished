@@ -79,25 +79,20 @@ module.exports.factory = function (db, User, Blueprint, exceptions, is, Cart, Hi
     // merge an old cart and a local cart in req.session 
     self.mergeCart = function (email, localCart, callback) {
         self.get(email, function (err, user) {
-            //console.log('local cart: ', localCart);
-            //console.log('\n\n');
-            //console.log('db cart: ', user.cart);
             // merge 
             user.cart = Cart.mergeCart(user.cart, localCart);
-            //console.log('\n\n');
-            //console.log('merged cart:', user.cart);
             collection.updateOne(
             { "email": email }, 
             {
                 $set: { "cart": user.cart },
             }, function(err, results) {
-              //console.log(results);
+                //console.log(results);
               callback(err);
             });
         });
     };
 
-    // remove 1 qty to Mongo DB
+    // remove one qty from Mongo DB
     self.removeQty = function (email, book, callback) {
         self.get(email, function (err, user) {
             user.cart = Cart.removeQty(user.cart, book);
@@ -112,7 +107,7 @@ module.exports.factory = function (db, User, Blueprint, exceptions, is, Cart, Hi
         });
     };
 
-    // remove 1 book to Mongo DB
+    // remove one book (entire book item) from Mongo DB
     self.removeList = function (email, book, callback) {
         self.get(email, function (err, user) {
             user.cart = Cart.removeList(user.cart, book);
@@ -127,7 +122,7 @@ module.exports.factory = function (db, User, Blueprint, exceptions, is, Cart, Hi
         });
     };
     
-    // push cart to history means clear the shopping cart
+    // push cart to history means to clear the shopping cart
     self.pushHistory = function (email, callback) {
         self.get(email, function (err, user) {
             console.log("test---------" ,user);
