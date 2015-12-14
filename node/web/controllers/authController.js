@@ -42,7 +42,6 @@ module.exports.factory = function (router, repo, User) {
                 //console.log("test33333->>>>>>>>>>>>>>>>>>>", req.cookies);
                 //console.log(user);
                 res.redirect('/history'); // show order history
-                //res.redirect('/');
             } else {
                 res.status(400);
             }
@@ -59,7 +58,7 @@ module.exports.factory = function (router, repo, User) {
             repo.get(req.cookies.auth.email, function (err, user) {
                 if (!err) {
                     //if is an authenticated user logging in
-                    console.log('mytest------------------>', user._id);
+                    //console.log('mytest------------------>', user._id);
                     res.send('200');
                 } else {
                     // if is not an authenticated user logging in

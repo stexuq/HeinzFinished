@@ -17,7 +17,6 @@ module.exports.factory = function (router, repo, exceptions, Cart, usersRepo) {
     });
     
     router.get('/api/getcart', function(req,res) {
-        //console.log('want to sent back: ', req.session.cart);
         res.send(req.session.cart);
     });
 
@@ -29,8 +28,7 @@ module.exports.factory = function (router, repo, exceptions, Cart, usersRepo) {
                 return;
             }
             // log in or not?
-            // logged in with user name = name
-            //console.log(req.cookies);
+            // if this user is logged in
             if(req.cookies.auth !== undefined) {
                 usersRepo.addToCart(req.cookies.auth.email, book, function (err) {
                     if (err) {
@@ -43,21 +41,16 @@ module.exports.factory = function (router, repo, exceptions, Cart, usersRepo) {
                 // insert book into cart
                 // save into MongoDB
             }
-            // not logged in
+            // if this user is not logged in
             else {
-                // save into memory
-                // first time access?
-                //console.log(res.locals);
+                // save into cache
                 if (req.session.cart === undefined) {
                     req.session.cart = {};
                     req.session.cart.book = [];
                     req.session.cart.amount = 0;
                 }
-                //add to memory
-                //req.session.cart.push(book);
+                //add to cache
                 req.session.cart = Cart.addToCart(req.session.cart, book);
-                // new model
-                //req.session.cart = new Cart(req.session.cart, book);
                 console.log(req.session.cart);
                 console.log('------------------------------')
                 console.log('length: ', req.session.cart.book.length);
@@ -75,8 +68,7 @@ module.exports.factory = function (router, repo, exceptions, Cart, usersRepo) {
                 return;
             }
             // log in ?
-            // logged in with user name = name
-            //console.log(req.cookies);
+            // if the user is logged in
             if(req.cookies.auth !== undefined) {
                 usersRepo.removeQty(req.cookies.auth.email, book, function (err) {
                     if (err) {
@@ -85,25 +77,15 @@ module.exports.factory = function (router, repo, exceptions, Cart, usersRepo) {
                         return;
                     }
                 });
-                // retrive cart from MongoDB
-
-                // insert book into cart
-                // save into MongoDB
             }
             // not logged in
             else {
-                // save into memory
-                // first time access?
                 if (req.session.cart === undefined) {
                     req.session.cart = {};
                     req.session.cart.book = [];
                     req.session.cart.amount = 0;
                 }
-                //add to memory
-                //req.session.cart.push(book);
                 req.session.cart = Cart.removeQty(req.session.cart, book);
-                // new model
-                //req.session.cart = new Cart(req.session.cart, book);
                 console.log(req.session.cart);
                 console.log('------------------------------')
                 console.log('length: ', req.session.cart.book.length);
@@ -121,8 +103,7 @@ module.exports.factory = function (router, repo, exceptions, Cart, usersRepo) {
                 return;
             }
             // log in ?
-            // logged in with user name = name
-            //console.log(req.cookies);
+            // if the user is logged in
             if(req.cookies.auth !== undefined) {
                 usersRepo.removeList(req.cookies.auth.email, book, function (err) {
                     if (err) {
@@ -131,25 +112,15 @@ module.exports.factory = function (router, repo, exceptions, Cart, usersRepo) {
                         return;
                     }
                 });
-                // retrive cart from MongoDB
-
-                // insert book into cart
-                // save into MongoDB
             }
             // not logged in
             else {
-                // save into memory
-                // first time access?
                 if (req.session.cart === undefined) {
                     req.session.cart = {};
                     req.session.cart.book = [];
                     req.session.cart.amount = 0;
                 }
-                //add to memory
-                //req.session.cart.push(book);
                 req.session.cart = Cart.removeList(req.session.cart, book);
-                // new model
-                //req.session.cart = new Cart(req.session.cart, book);
                 console.log(req.session.cart);
                 console.log('------------------------------')
                 console.log('length: ', req.session.cart.book.length);

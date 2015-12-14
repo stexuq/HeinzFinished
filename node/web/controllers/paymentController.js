@@ -5,16 +5,15 @@ module.exports.factory = function (router,request) {
 
     router.post('/api/payments', function (req, res) {
         //console.log(req.cookies.auth.email);
-        //token is req.body.token
+        //token is inside req.body.token
         console.log(req.body.token);
-        //amount is req.body.amount
+        //amount is inside req.body.amount
         console.log(req.body.amount);
 
         var dataToSend = {
             form: {
                 amount: req.body.amount,
                 currency:'usd',
-                //source:req.query.q,
                 source:req.body.token,
                 description: 'Test 1'
             },
