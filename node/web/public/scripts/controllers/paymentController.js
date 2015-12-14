@@ -28,8 +28,6 @@ Hilary.scope('heinz').register({
                     //force to log in
                     console.log(data);
                     window.location.replace('/loginforpayment');
-                    //merge shopping cart into mongoDB
-                    //
                 }
             });
         };

@@ -1,5 +1,5 @@
 /*
-// See the README.md for info on this module
+/ See the README.md for info on this module
 */
 module.exports.name = 'Cart';
 module.exports.dependencies = ['Blueprint', 'ObjectID', 'exceptions'];
@@ -7,6 +7,7 @@ module.exports.factory = function (Blueprint, ObjectID, exceptions) {
     'use strict';
     var Cart = {};
     
+    // add a book to the cart
     Cart.addToCart = function (old, product) {
         var self ={};
         self = old;
@@ -16,10 +17,8 @@ module.exports.factory = function (Blueprint, ObjectID, exceptions) {
             if (self.book[i].uid === product.uid) {
                self.book[i].qty++;
                self.amount += product.price;
-               //console.log('before--- qty: ', self.book[i].qty,'amount: ', self.amount);
-               //self.amount.toFixed(2);
+               // Stripe charge should be round to cents
                self.amount = Math.round(self.amount * 100) / 100.0;
-               //console.log('after--- qty: ', self.book[i].qty,'amount: ', self.amount);
                flag = true;
                break;
             }
@@ -32,11 +31,12 @@ module.exports.factory = function (Blueprint, ObjectID, exceptions) {
         } 
         
         self.items += 1;
-        console.log('test------------------->> ',self.items);
         return self;
     };
     
-    // dont know, maybe will not work
+    // merge two carts 
+    // 1) local shopping cart of the guest user
+    // 2) shopping cart stored in the data base 
     Cart.mergeCart = function (old, localCart) {
         var self ={};
         var i, j;
@@ -50,8 +50,14 @@ module.exports.factory = function (Blueprint, ObjectID, exceptions) {
             self = old;
         }
         
+        console.log("old->>>>>>>>>>>>", old);
+        console.log("local->>>>>>>>>>>", localCart);
+        
+        self.amount = Math.round((self.amount + localCart.amount) * 100) / 100.0;
+        self.items += localCart.items;
+        
         var lenOld = old.book.length;
-        for(j=0; j<localCart.book.length; j++) {
+        for(j = 0; j<localCart.book.length; j++) {
             var flag = false;
             for(i = 0; i<lenOld; i++) {
                 if (self.book[i].uid === localCart.book[j].uid) {
@@ -61,25 +67,23 @@ module.exports.factory = function (Blueprint, ObjectID, exceptions) {
             }
             
             if (!flag) {
-                self.book.push(localCart.book[i]);
+                self.book.push(localCart.book[j]);
             }
         }
-        
-        self.amount = Math.round((self.amount + localCart.amount) * 100) / 100.0;
-        self.items += localCart.items;
         
         return self;
     };
 
+    // remove one item of the specific book 
     Cart.removeQty = function (old, product) {
         var self ={};
         self = old;
         var i;
         for(i=0; i<self.book.length; i++) {
             if (self.book[i].uid === product.uid) {
-               //if qty is one, remove from the cart
+               //if qty is one, remove this item from the cart
                if (self.book[i].qty === 1) {
-                 self.items = 0;
+                 //self.items = 0;
                  self.book.splice(i, 1);
                }
                // if qty is greater than one, qty --
@@ -96,6 +100,7 @@ module.exports.factory = function (Blueprint, ObjectID, exceptions) {
         return self; 
     };
 
+    // remove the entire book item 
     Cart.removeList = function (old, product) {
         var self ={};
         self = old;

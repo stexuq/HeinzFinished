@@ -55,7 +55,7 @@ Hilary.scope('heinz').register({
                     
                     console.log(data);
                     //window.location.replace('/checkout');
-                    var number = $(".cart-number").text()
+                    var number = $(".cart-number").text();
                     if (number == "")
                         $(".cart-number").text("1");
                     else {

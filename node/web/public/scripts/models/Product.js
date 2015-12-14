@@ -71,7 +71,16 @@ Hilary.scope('heinz').register({
             });
             
             self.downLoad = function () {
-                return 'https://www.google.com';
+                var searchTerm  = self.title().split(" ");
+                var i;
+                var key = "";
+                for (i = 0; i < searchTerm.length - 1; i++) {
+                    key = key + searchTerm[i] + '+';
+                }
+                key = key + searchTerm[i];
+                var url = 'http://www.google.com' + '/search?q=' + key;
+                //console.log(url);
+                return url;
             };
             
             // Ensure updates no more than once per 50-millisecond period

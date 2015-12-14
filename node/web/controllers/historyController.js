@@ -19,7 +19,8 @@ module.exports.factory = function (router, repo, exceptions, Cart, usersRepo) {
     
 
     router.get('/api/gethistory', function (req, res) {
-        console.log(req.cookies.auth.email);
+        //console.log(req.cookies.auth.email);
+        console.log("test------------------------------>", req.cookies.auth.email);
         usersRepo.get(req.cookies.auth.email, function (err, user) {
             if (err) {
                 exceptions.throwException(err);
