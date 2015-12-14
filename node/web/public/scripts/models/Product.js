@@ -115,7 +115,7 @@ Hilary.scope('heinz').register({
             
             self.download = function() {
                 router.navigate(self.downLoad());
-            }
+            };
 
             return self;
         };
